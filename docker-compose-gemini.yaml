@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  my-service:
+    container_name: gemini
+    image: docker.io/hajsf/go-sdk:1.21.5
+    volumes:
+      - type: volume
+        source: gemini
+        target: /app
+      - type: bind
+        source: /run/media/hasan/data1/gemini
+        target: /app
+    ports:
+      - 4040:80
+    command: tail -f /dev/null
+volumes:
+  gemini:
+#    external: true # If the mojo volume already exists
