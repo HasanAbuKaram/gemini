@@ -1,4 +1,4 @@
 # ignore all . files and . folders
 .*
-!.env
+.env
 !.gitignore
